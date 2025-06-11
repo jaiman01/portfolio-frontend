@@ -18,7 +18,9 @@ const Team: React.FC = () => {
 
   const fetchTeam = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/team");
+      const res = await axios.get(
+        `${process.env.REACT_APP_API_BASE_URL}/api/team`
+      );
       setTeamMembers(res.data);
     } catch (err) {
       console.error("Failed to fetch team members:", err);

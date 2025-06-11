@@ -17,7 +17,9 @@ const BlogDetail: React.FC = () => {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/blog/${id}`);
+        const res = await axios.get(
+          `${process.env.REACT_APP_API_BASE_URL}/api/blog/${id}`
+        );
         setPost(res.data);
       } catch (err) {
         console.error("Failed to fetch blog post:", err);

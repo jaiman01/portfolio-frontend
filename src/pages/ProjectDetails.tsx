@@ -20,7 +20,7 @@ const ProjectDetails: React.FC = () => {
   const fetchProjectById = async (projectId: string) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/projects/${projectId}`
+        `${process.env.REACT_APP_API_BASE_URL}/api/projects/${projectId}`
       );
       setProject(res.data);
     } catch (err) {

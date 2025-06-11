@@ -19,7 +19,9 @@ const Blog: React.FC = () => {
 
   const fetchPosts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/blog");
+      const res = await axios.get(
+        `${process.env.REACT_APP_API_BASE_URL}/api/blog`
+      );
       setPosts(res.data);
     } catch (err) {
       console.error("Failed to fetch blog posts:", err);
